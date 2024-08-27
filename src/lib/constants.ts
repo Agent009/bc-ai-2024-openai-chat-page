@@ -9,7 +9,7 @@ const cwaServerHost = process.env.CWA_SERVER_HOST || "http://localhost";
 const cwaServerPort = process.env.CWA_SERVER_PORT || 3090;
 const cwaServerUrl = process.env.NEXT_PUBLIC_CWA_SERVER_URL || `${cwaServerHost}:${cwaServerPort}`;
 
-export default Object.freeze({
+export const constants = Object.freeze({
   // Environment
   env: {
     dev: devEnv,
@@ -23,9 +23,22 @@ export default Object.freeze({
     port: cwaServerPort,
     url: cwaServerUrl,
   },
+  // 3rd Party, Integrations
+  openAI: {
+    apiKey: process.env.OPENAI_API_KEY,
+    model: process.env.OPENAI_MODEL || "gpt-4o-mini",
+    response: {
+      default: "default",
+      streaming: "streaming",
+    },
+  },
   // Routes
   routes: {
     anchor: "#",
     home: "/",
+    api: {
+      base: "/api/",
+      chat: "chat",
+    },
   },
 });

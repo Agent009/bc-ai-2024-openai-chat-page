@@ -3,12 +3,16 @@ import { Inter } from "next/font/google";
 import "@assets/styles/globals.css";
 import Header from "@components/common/Header";
 import Footer from "@components/common/Footer";
+import FavIcon from "@images/icons/favicon.ico";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "03-Chat-Page - Encode AI Bootcamp (Q3 2024)",
   description: "Creating a Simple Chat Page",
+  icons: {
+    icon: FavIcon.src,
+  },
 };
 
 export default function RootLayout({
