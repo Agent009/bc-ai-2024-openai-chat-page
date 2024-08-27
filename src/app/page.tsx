@@ -7,15 +7,38 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const res = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ messages: [{ role: "user", content: message }] }),
-    });
-    const data = await res.json();
-    setResponse(data.content);
+    setResponse("Loading...");
+
+    try {
+      const res = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ messages: [{ role: "user", content: message }] }),
+      });
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      const text = await res.text();
+      let data;
+
+      try {
+        data = JSON.parse(text);
+      } catch (error) {
+        console.error("Failed to parse JSON:", text);
+        throw new Error("Invalid JSON response from server");
+      }
+
+      setResponse(data.content);
+    } catch (error) {
+      console.error("Error:", error);
+      // @ts-expect-error ignore
+      setResponse(`Error: ${error?.message}`);
+    }
+
     setMessage("");
   };
 

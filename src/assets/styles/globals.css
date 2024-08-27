@@ -13,35 +13,27 @@
   --deep-pink: #eb6f64;
 
   /* Blue Tones */
-  --very-light-blue: #b8d6f2;
+  --very-light-blue: #ebf0fe;
   --dusty-blue: #4d87bd;
-  --dark-blue: #2b6aa5;
+  --dark-blue: #061f36;
+  --light-blue: #1e5282;
+  --medium-blue: #123e66;
 
   /* Off-white Tones */
   --very-light-offwhite: #e0e0e0;
   --light-offwhite: #e6e6e6;
 
   /* Gray Tones */
-  --light-gray: #455a64;
+  --light-gray: #f6f6f6;
   --normal-gray: #37474f;
-  --dark-gray: #494949;
+  --dark-gray: #3b3b3b;
   --deep-gray: #263238;
+  --medium-gray: #c8c8c8;
 
   /* Additional Colors */
   --light-periwinkle: #b8c0e9;
   --light-purple: #ba68c8;
-
-  --light-blue: #1e5282;
-  --medium-blue: #123e66;
-  --dark-blue: #061f36;
-
-  --light-gray: #f6f6f6;
-  --medium-gray: #c8c8c8;
-  --dark-gray: #3b3b3b;
-
   --deep-orange: #f85545;
-
-  --very-light-blue: #ebf0fe;
   --lightest-blue: #f8faff;
 }
 /* Add this to your global styles.css */
