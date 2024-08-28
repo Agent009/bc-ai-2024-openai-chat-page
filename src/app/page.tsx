@@ -10,7 +10,7 @@ export default function Home() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setResponse("> " + message + "\n\n");
+    setResponse("User      > " + message + "\n\n" + "Assistant > ");
     setMessage("");
     setIsLoading(true);
 
@@ -45,7 +45,7 @@ export default function Home() {
           const { value, done: readerDone } = await reader.read();
           done = readerDone;
           const chunk = decoder.decode(value, { stream: true });
-          setResponse((prev) => prev + chunk); // Append each chunk to the response
+          setResponse((prev) => prev + chunk);
         }
       } else {
         // Handle default response type
@@ -84,7 +84,7 @@ export default function Home() {
             </button>
           </form>
           <div className="mt-4 p-3 bg-gray-700 text-white rounded">
-            <p>{response}</p>
+            <pre>{response}</pre>
           </div>
         </div>
       </section>
