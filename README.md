@@ -1,5 +1,4 @@
-# Encode_AI-and-GPT-Bootcamp-Q3-2024
-Creating a Simple Chat Page.
+# OpenAI - Creating a Simple Chat Page
 
 ## Instructions / README
 * [Lesson-05 / exercises / 03-Chat-Page.md](https://github.com/Encode-Club-AI-Bootcamp/Generative-AI-Applications/blob/main/Lesson-05/exercises/03-Chat-Page.md)
